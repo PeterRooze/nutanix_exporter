@@ -59,6 +59,6 @@ scrape_configs:
     - source_labels: [__param_target]
       target_label: instance
     - target_label: __address__
-      replacement: <ipadressNodeExporter>:9405
+      replacement: <ipadressExporter>:9405
 ```
 
