@@ -5,7 +5,7 @@
 
     localhost:9405/metrics
 
-# Running exporter with different sections | STable with Config File
+# Running exporter with different sections | Sable with Config File
 
     nutanix_exporter -nutanix.conf ./config.yml
 
