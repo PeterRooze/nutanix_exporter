@@ -14,7 +14,7 @@ During the Query pass GET-Parameter Section
     localhost:9405/metrics?section=<target>
 
 
-Config
+Example Config
 ```
 default:
   nutanix_host: https://nutanix.cluster.local:9440
@@ -27,7 +27,7 @@ cluster02:
   nutanix_password: PW
 ```
 
-# Prometheus extendended Configuration
+# Prometheus extendended example Configuration
 
 Nutanix Config:
 ```
