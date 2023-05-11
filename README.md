@@ -59,6 +59,6 @@ scrape_configs:
     - source_labels: [__param_target]
       target_label: instance
     - target_label: __address__
-      replacement: nutanix_exporter:9405
+      replacement: <ipadressNodeExporter>:9405
 ```
 
