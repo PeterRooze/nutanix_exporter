@@ -5,7 +5,7 @@
 
     localhost:9405/metrics
 
-# Use config file for easy of use and stability
+# Use config file for ease of use and stability
 
     nutanix_exporter -nutanix.conf ./config.yml
 
