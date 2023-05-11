@@ -11,7 +11,7 @@
 
 During the Query pass GET-Parameter Section
 
-    localhost:9405/metrics?section=cluster01
+    localhost:9405/metrics?section=<target>
 
 
 Config
