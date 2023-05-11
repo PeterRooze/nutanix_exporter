@@ -5,7 +5,7 @@
 
     localhost:9405/metrics
 
-# Running exporter with different sections
+# Running exporter with different sections | STable with Config File
 
     nutanix_exporter -nutanix.conf ./config.yml
 
@@ -19,12 +19,12 @@ Config
 default:
   nutanix_host: https://nutanix.cluster.local:9440
   nutanix_user: prometheus
-  nutanix_password: p@ssw0rd
+  nutanix_password: PW
 
 cluster02:
   nutanix_host: https://nutanix02.cluster.local:9440
   nutanix_user: prometheus
-  nutanix_password: qwertz
+  nutanix_password: PW
 ```
 
 # Prometheus extendended Configuration
@@ -34,12 +34,12 @@ Nutanix Config:
 nutanix.cluster.local:
   nutanix_host: https://nutanix.cluster.local:9440
   nutanix_user: prometheus
-  nutanix_password: p@ssw0rd
+  nutanix_password: PW
 
 nutanix02.cluster.local:
   nutanix_host: https://nutanix02.cluster.local:9440
   nutanix_user: prometheus
-  nutanix_password: qwertz
+  nutanix_password: PW
 ```
 
 Prometheus Config:
