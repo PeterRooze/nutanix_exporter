@@ -15,8 +15,8 @@ import (
 	"flag"
 	"net/http"
 
-	"github.com/erictsai1107/nutanix_exporter/collector"
-	"github.com/erictsai1107/nutanix_exporter/nutanix"
+	"github.com/PeterRooze/nutanix_exporter/collector"
+	"github.com/PeterRooze/nutanix_exporter/nutanix"
 
 	//	"time"
 	//	"regexp"

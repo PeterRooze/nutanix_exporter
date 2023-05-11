@@ -3,7 +3,7 @@ package collector
 
 //import "encoding/json"
 import (
-	"github.com/erictsai/nutanix_exporter/nutanix"
+	"github.com/PeterRooze/nutanix_exporter/nutanix"
 	"strconv"
 
 	"github.com/prometheus/client_golang/prometheus"
