@@ -1,4 +1,3 @@
-
 package nutanix
 
 import (
@@ -6,26 +5,25 @@ import (
 )
 
 type HostResponse struct {
-	Metadata	*HostMetadata
-	Entities	[]HostEntity
+	Metadata *HostMetadata
+	Entities []HostEntity
 }
 
 type HostMetadata struct {
-
 }
 
 type HostEntity struct {
-	Name		string  `json:"name"`
-	CpuFrequency	int64	`json:"cpu_frequency_in_hz"`
-	CpuCapacity	int64	`json:"cpu_capacity_in_hz"`
-	MemoryCapacity	int64	`json:"memory_capacity_in_bytes"`
-	NumCpuCores	int	`json:"num_cpu_cores`
-	NumVms		int	`json:"num_vms"`
-	BootTime	int64	`json:"boot_time_in_usecs"`
-	Stats		map[string]string `json:"stats"`
-	UsageStats	map[string]string `json:"usage_stats"`
-	Serial		string  `json:"serial"`
-	ClusterName	string
+	Name           string            `json:"name"`
+	CpuFrequency   int64             `json:"cpu_frequency_in_hz"`
+	CpuCapacity    int64             `json:"cpu_capacity_in_hz"`
+	MemoryCapacity int64             `json:"memory_capacity_in_bytes"`
+	NumCpuCores    int               `json:"num_cpu_cores"`
+	NumVms         int               `json:"num_vms"`
+	BootTime       int64             `json:"boot_time_in_usecs"`
+	Stats          map[string]string `json:"stats"`
+	UsageStats     map[string]string `json:"usage_stats"`
+	Serial         string            `json:"serial"`
+	ClusterName    string
 }
 
 func (n *Nutanix) GetHosts() []HostEntity {

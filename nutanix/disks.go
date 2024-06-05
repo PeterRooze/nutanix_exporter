@@ -1,4 +1,3 @@
-
 package nutanix
 
 import (
@@ -6,27 +5,27 @@ import (
 )
 
 type DiskResponse struct {
-	Metadata	*DiskMetadata
-	Entities	[]*DiskEntity
+	Metadata *DiskMetadata
+	Entities []*DiskEntity
 }
 
 type DiskMetadata struct {
-	GrandTotalEntites	float64	`json:"grand_total_entities"`
-	TotalEntites		float64	`json:"total_entities"`
-	Count			float64	`json:"count"`
+	GrandTotalEntites float64 `json:"grand_total_entities"`
+	TotalEntites      float64 `json:"total_entities"`
+	Count             float64 `json:"count"`
 }
 
 type DiskEntity struct {
-        Id              string  `json:"Id"`
-        MountPath       string  `json:"mount_path"`
-	HostName	string  `json:"node_name"`
-        Stats           map[string]string       `json:"stats"`
-        UsageStats      map[string]string       `json:"usage_stats"`
-	StorageTierName string  `json:"storage_tier_name"`
-	DiskStatus	string	`json:"disk_status"`
-	Online		int	`json:"online"`
-	DiskSize	int64	`json:"disk_size"`
-	Location	int	`json:"location"`
+	Id              string            `json:"Id"`
+	MountPath       string            `json:"mount_path"`
+	HostName        string            `json:"node_name"`
+	Stats           map[string]string `json:"stats"`
+	UsageStats      map[string]string `json:"usage_stats"`
+	StorageTierName string            `json:"storage_tier_name"`
+	DiskStatus      string            `json:"disk_status"`
+	Online          int               `json:"online"`
+	DiskSize        int64             `json:"disk_size"`
+	Location        int               `json:"location"`
 }
 
 func (n *Nutanix) GetDisks() []*DiskEntity {

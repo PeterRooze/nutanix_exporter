@@ -1,4 +1,3 @@
-
 package nutanix
 
 import (
@@ -6,22 +5,22 @@ import (
 )
 
 type VirtualDiskResponse struct {
-	Metadata	*VirtualDiskMetadata
-	Entities	[]*VirtualDiskEntity
+	Metadata *VirtualDiskMetadata
+	Entities []*VirtualDiskEntity
 }
 
 type VirtualDiskMetadata struct {
-	GrandTotalEntites	float64	`json:"grand_total_entities"`
-	TotalEntites		float64	`json:"total_entities"`
-	Count			float64	`json:"count"`
+	GrandTotalEntites float64 `json:"grand_total_entities"`
+	TotalEntites      float64 `json:"total_entities"`
+	Count             float64 `json:"count"`
 }
 
 type VirtualDiskEntity struct {
-        Id              string  `json:"virtual_disk_id"`
-        HostName            string  `json:"attached_vmname"`
-        Stats           map[string]string       `json:"stats"`
-	DiskMb		float64 `json:"disk_capacity_in_bytes"`
-	NutanixNFSFilePath	string	`json:"nutanix_nfsfile_path"`
+	Id                 string            `json:"virtual_disk_id"`
+	HostName           string            `json:"attached_vmname"`
+	Stats              map[string]string `json:"stats"`
+	DiskMb             float64           `json:"disk_capacity_in_bytes"`
+	NutanixNFSFilePath string            `json:"nutanix_nfsfile_path"`
 }
 
 func (n *Nutanix) GetVirtualDisks() []*VirtualDiskEntity {

@@ -78,8 +78,8 @@ func main() {
 			section = "default"
 		}
 
-		log.Infof("Queried section: %s", section)
-		log.Debug("Create Nutanix instance")
+		log.Printf("Queried section: %s", section)
+		log.Printf("Create Nutanix instance")
 
 		//Write new Parameters
 		if conf, ok := config[section]; ok {

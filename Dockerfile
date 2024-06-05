@@ -1,26 +1,33 @@
-# Dockerfile builds an image for a client_golang example.
-#
-# Use as (from the root for the client_golang repository):
-#    docker build -f examples/$name/Dockerfile -t prometheus/golang-example-$name .
+# docker build -t nutanix_exporter:1.x .
+ARG GO_VERSION=1.22.2
+FROM golang:${GO_VERSION} AS builder
 
-# Builder image, where we build the example.
+ENV GOPATH /go
+WORKDIR /app
 
-FROM golang:1.9.0 AS builder
-
-ENV GOPATH /go/src/nutanix-exporter
-
-WORKDIR /go/src/nutanix-exporter
 COPY . .
-RUN echo "> GOPATH: " $GOPATH
-RUN go get -d
-RUN CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w'
+
+# Install dependencies and build the binary.
+RUN go get -d && \
+    CGO_ENABLED=0 GOOS=linux go build -a -tags netgo -ldflags '-w' -o nutanix_exporter
 
 # Final image.
-FROM quay.io/prometheus/busybox:latest
+FROM alpine:latest
 
-LABEL maintainer "Martin Weber <martin.weber@de.clara.net>"
+LABEL maintainer="Peter"
+ARG VERSION=1.2.3
 
-WORKDIR /
-COPY --from=builder /go/src/nutanix-exporter/nutanix-exporter .
+# Add metadata
+LABEL version="${VERSION}"
+
+WORKDIR /app
+
+# Copy binary from builder stage.
+COPY --from=builder /app/nutanix_exporter /app/nutanix_exporter
+
+# Use non-root user
+RUN adduser -D nonroot
+USER nonroot
+
 EXPOSE 9404
-ENTRYPOINT ["/nutanix-exporter"]
+ENTRYPOINT ["/app/nutanix_exporter"]

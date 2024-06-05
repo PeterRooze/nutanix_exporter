@@ -1,7 +1,8 @@
+.PHONY: all docker
 
 BIN_NAME = nutanix-exporter
-DOCKER_IMAGE_NAME ?= nutanix-exporter
-GOPATH = $($pwd)
+DOCKER_IMAGE_NAME = nutanix-exporter:1.3
+GOPATH = /home/clb/go
 
 all: linux windows docker
 
@@ -30,6 +31,3 @@ prepare:
 	mkdir -p bin/
 	@echo "GO get dependencies"
 	go get -d
-	
-
-.PHONY: all
